@@ -12,9 +12,9 @@ function populateForm() {
   //TODO: Add an <option> tag inside the form's select for each product
   const selectElement = document.getElementById('items');
   for (let i in Product.allProducts) {
-    let option = document.createElement('options');
+    let option = document.createElement('option');
     option.textContent = Product.allProducts[i].name;
-    selectElement.appendChild('options');
+    selectElement.appendChild(option);
   }
 }
 
@@ -32,28 +32,41 @@ function handleSubmit(event) {
   updateCartPreview(cart.items[-1]);
 }
 
-// TODO: Add the selected item and quantity to the cart
+// DONE: Add the selected item and quantity to the cart
 function addSelectedItemToCart() {
-  let getProduct = document.getElementById('item');
+  let getProduct = document.getElementById('items').value;
   let getQuantity = document.getElementById('quantity').value;
-    for (let i = 0; i < getQuantity; i++) {
-    Cart.Items.push(items[itemsId]);
+  console.log(getProduct, getQuantity);
+    for (let i = 0; i < Product.allProducts.length; i++) {
+      if(Product.allProducts[i].name === getProduct) {
+        cart.addItem(Product.allProducts[i], getQuantity);
+        break;
+      }
     }
-   // TODO: suss out the item picked from the select list
-  // TODO: get the quantity
-  // TODO: using those, add one item to the Cart
+   // DONE: suss out the item picked from the select list
+  // DONE: get the quantity
+  // DONE: using those, add one item to the Cart
 }
 
 // TODO: Update the cart count in the header nav with the number of items in the Cart
 function updateCounter() { 
-  let getItemCount = document.getElementById('itemCount');
-    for (let i = o; i < getItemCount; i++) {
-      Cart.Items.push(items[itemCount]);
-    }
-}
+  // let getItemCount = document.getElementById('itemCount');
+  // let cartCounter = document.querySelector('span + div');
+  // let cartItemCount = document.querySelector('.submit');
+
+  // let total = 0
+  // for (let i = 0; i < cartRows.length; i++) {
+  //   let cartRow = cartRows[i]
+  //   let quantityElement = cartRow.querySelector('span');
+
+
+  //   let quantity = quantityElement.value
+  //   total = quantity;
+  }
+
 
 // TODO: As you add items into the cart, show them (item & quantity) in the cart preview div
-function updateCartPreview() {
+function updateCartPreview(cartCounter,) {
   // TODO: Get the item and quantity from the form
   // TODO: Add a new element to the cartContents div with that information
 }

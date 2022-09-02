@@ -1,1 +1,56 @@
 /* TODO: Make it awesome */
+header {
+    background-color: orange;
+    width: 100%;
+    padding: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 75px;
+}
+
+nav, li {
+    font-size: 30px;
+    display: flex;
+    flex-direction: row;
+}
+
+section {
+    /* margin-top: 20px;
+    margin-bottom: 20px;
+    /* text-align: center; */
+    padding: 50px;
+    border-bottom: solid 1px;
+    width: 100%; */
+
+}
+
+fieldset {
+    border: solid 5px orange;
+    margin: auto;
+    width: 75%;
+    padding: 17px;
+    align-content: center;
+    word-spacing: 2px;
+    font-size: 50px;
+}
+
+input {
+    font-size: 50px;
+}
+
+#items {
+    font-size: 50px;
+}
+
+body {
+    background-color: yellow;
+    display: flex;
+    flex-direction: column;
+
+}
+
+main {
+    width: 100%;
+    display: block;
+}
